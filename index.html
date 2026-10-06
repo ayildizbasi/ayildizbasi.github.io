@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdullah Yildizbasi</title>
+<meta name="description" content="Abdullah Yildizbasi, Clinical Associate Professor of Management Science at the University of Alabama in Huntsville. Research on circular supply chains, blockchain, artificial intelligence and supply chain resilience.">
+<meta name="author" content="Abdullah Yildizbasi">
+<meta property="og:title" content="Abdullah Yildizbasi">
+<meta property="og:description" content="Clinical Associate Professor of Management Science, University of Alabama in Huntsville.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232a3442'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EAY%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap">
+<style>
+/* Layout: a dark portrait hero carrying name, role, research focus and education; below it a single cream column of links, bio and publications. */
+:root{
+  color-scheme: light;
+  --paper:#f3f1ec;        /* page ground, soft cream */
+  --rule:#d9d6ce;         /* hairlines on cream */
+  --ink:#262b33;          /* body text */
+  --ink-soft:#5c636e;     /* secondary text */
+  --heading:#2a3442;      /* section headings, charcoal of the suit */
+  --brand:#4a6da3;        /* steel blue of the tie: wordmark on cream, years, link hover */
+  --hero:#bfbfc4;         /* the photo's studio backdrop */
+  --hero-ink:#ffffff;
+  --shade:17,22,31;       /* rgb of the hero darkening overlay */
+  --sans:"Lato","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --wrap:1040px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(18px,5vw,40px)}
+
+/* ---------- top bar ---------- */
+.top{position:relative;z-index:3}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-block:20px}
+.brand{font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:19px;text-decoration:none;color:var(--brand)}
+.nav{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;margin:0;padding:0}
+.nav a{text-decoration:none;font-weight:700;font-size:16px;color:var(--ink-soft);padding-block:4px;border-bottom:2px solid transparent}
+.nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--brand)}
+.nav a:hover{color:var(--ink)}
+/* on the home view the bar floats over the hero */
+body[data-view="research"] .top{position:absolute;inset:0 0 auto 0}
+body[data-view="research"] .brand{color:var(--hero-ink)}
+body[data-view="research"] .nav a{color:rgba(255,255,255,.78)}
+body[data-view="research"] .nav a[aria-current="page"],body[data-view="research"] .nav a:hover{color:var(--hero-ink)}
+body[data-view="research"] .nav a[aria-current="page"]{border-bottom-color:rgba(255,255,255,.7)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--hero);color:var(--hero-ink);isolation:isolate}
+.hero-photo{position:absolute;right:calc(-1 * clamp(40px, (1280px - 100vw) * .75 + 40px, 300px));bottom:0;height:100%;width:auto;max-width:none;z-index:-2;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 22%);
+  mask-image:linear-gradient(to right,transparent 0,#000 22%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(var(--shade),.55) 0,rgba(var(--shade),0) 150px),
+    linear-gradient(90deg,rgba(var(--shade),.90) 0%,rgba(var(--shade),.80) 36%,rgba(var(--shade),.42) 62%,rgba(var(--shade),.30) 100%)}
+.hero .wrap{padding-block:120px 54px}
+.hero-text{max-width:540px}
+.hero h1{font-size:clamp(30px,4.6vw,40px);line-height:1.15;font-weight:900;margin:0 0 18px;text-wrap:balance}
+.hero .role{font-style:italic;font-weight:700;font-size:18px;line-height:1.55;margin:0 0 30px}
+.hero h2{font-size:17px;font-weight:700;margin:0 0 8px}
+.hero p{margin:0}
+.sq{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.sq li{position:relative;padding-left:20px}
+.sq li::before{content:"";position:absolute;left:2px;top:.68em;width:6px;height:6px;background:currentColor;opacity:.85}
+.hero .edu{margin-top:30px}
+.edu b{font-weight:700;margin-right:10px}
+
+/* ---------- contact strip ---------- */
+.contact .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px;padding-block:30px;border-bottom:1px solid var(--rule)}
+.links{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0;align-content:flex-start}
+.links a{display:inline-block;padding:8px 16px;border:1.5px solid var(--heading);border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;color:var(--heading)}
+.links a:hover{background:var(--heading);color:var(--paper)}
+.reach{font-size:16px;color:var(--ink-soft);display:grid;gap:2px;min-width:0}
+.reach a{color:var(--ink);font-weight:700}
+
+/* ---------- sections ---------- */
+main section.band .wrap{padding-block:46px 8px}
+h2.caps{font-size:clamp(24px,3.4vw,30px);font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--heading);margin:0 0 22px}
+.prose{max-width:66ch;margin:0 0 16px}
+.year-group{display:grid;grid-template-columns:84px minmax(0,1fr);gap:0 24px;padding-block:22px;border-top:1px solid var(--rule)}
+.year{grid-row:1 / span 99;margin:0;font-size:22px;font-weight:900;color:var(--brand);font-variant-numeric:tabular-nums;line-height:1.3}
+.pub{grid-column:2;padding-bottom:22px}
+.pub:last-child{padding-bottom:0}
+.pub h4{margin:0 0 4px;font-size:18.5px;line-height:1.38;font-weight:700;color:var(--heading);text-wrap:pretty}
+.pub p{margin:0;font-size:16px}
+.with{font-style:italic;color:var(--ink-soft)}
+.venue{font-style:italic;font-weight:700}
+.venue a{text-underline-offset:3px}
+.venue a:hover{color:var(--brand)}
+.note{color:var(--brand);font-weight:700;font-size:14.5px !important;letter-spacing:.02em}
+
+.page-head .wrap{padding-block:34px 0}
+.block{padding-block:22px;border-top:1px solid var(--rule)}
+.sub{margin:0 0 12px;font-size:20px;font-weight:900;color:var(--heading)}
+.when{margin:14px 0 6px;font-weight:700;font-style:italic;color:var(--ink-soft);font-size:16px}
+.block .sq{max-width:74ch}
+.courses{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.courses li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 24px}
+.course{font-weight:700;color:var(--heading)}
+.terms{color:var(--ink-soft)}
+
+footer .wrap{padding-block:34px 44px;color:var(--ink-soft);font-size:14.5px;border-top:1px solid var(--rule);margin-top:30px}
+
+@media (max-width:860px){
+  body{font-size:16px}
+  .hero-photo{top:0;bottom:auto;right:50%;transform:translateX(50%);height:340px;
+    -webkit-mask-image:linear-gradient(to top,transparent 0,#000 30%);
+    mask-image:linear-gradient(to top,transparent 0,#000 30%)}
+  .hero{background:#2b2f37}
+  .hero::after{background:
+    linear-gradient(180deg,rgba(var(--shade),.62) 0,rgba(var(--shade),.18) 110px,rgba(var(--shade),.18) 230px,rgba(var(--shade),.92) 340px)}
+  .hero .wrap{padding-block:330px 40px}
+  .year-group{grid-template-columns:minmax(0,1fr);gap:8px}
+  .year{grid-row:auto}
+  .pub{grid-column:1}
+  .courses li{grid-template-columns:minmax(0,1fr)}
+}
+
+/* ---- colours and photo placement specific to this site ---- */
+:root{
+  --heading:#1b2f4b;      /* navy of the suit */
+  --brand:#2c66a3;        /* blue of the tie: wordmark on cream, years, link hover */
+  --hero:#122c43;         /* the photo's studio backdrop */
+  --shade:8,18,34;
+}
+.hero{background:linear-gradient(180deg,#132d44 0%,#122c43 55%,#0c2238 100%)}
+.hero-photo{right:0;height:calc(100% - 54px);
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 26%),linear-gradient(to bottom,transparent 0,#000 9%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent 0,#000 26%),linear-gradient(to bottom,transparent 0,#000 9%);
+  mask-composite:intersect}
+.hero::after{background:
+  linear-gradient(180deg,rgba(var(--shade),.35) 0,rgba(var(--shade),0) 140px),
+  linear-gradient(90deg,rgba(var(--shade),.38) 0%,rgba(var(--shade),.20) 45%,rgba(var(--shade),.04) 100%)}
+@media (min-width:861px){.year-group{grid-template-columns:104px minmax(0,1fr)}}
+@media (max-width:860px){
+  .hero-photo{top:92px;bottom:auto;right:50%;transform:translateX(50%);height:290px;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 74%,transparent 100%),linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 74%,transparent 100%),linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
+    mask-composite:intersect}
+  .hero::after{background:linear-gradient(180deg,rgba(var(--shade),.30) 0,rgba(var(--shade),.04) 100px,rgba(var(--shade),.04) 300px,rgba(var(--shade),.28) 380px,rgba(var(--shade),.28) 100%)}
+  .hero .wrap{padding-block:372px 40px}
+  .hero.no-photo .wrap{padding-block:120px 40px}
+}
+</style>
+</head>
+<body>
+<!-- ===== MENU ===== -->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#research" data-go="research">Abdullah Yildizbasi</a>
+    <ul class="nav">
+      <li><a href="#research" data-go="research">Research</a></li>
+      <li><a href="#talks" data-go="talks">Talks</a></li>
+      <li><a href="#teaching" data-go="teaching">Teaching</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div id="view-research" data-view-panel="research">
+    <!-- ===== BANNER: name, role, research focus, education. The photo is the file portrait.jpg ===== -->
+    <section class="hero">
+      <img class="hero-photo" alt="Portrait of Abdullah Yildizbasi" src="portrait.jpg" onerror="this.parentNode.classList.add('no-photo');this.remove()">
+      <div class="wrap">
+        <div class="hero-text">
+          <h1>Abdullah Yildizbasi</h1>
+          <p class="role">Clinical Associate Professor of Management Science<br>College of Business, University of Alabama in Huntsville</p>
+          <h2>My research focuses on:</h2>
+          <ul class="sq">
+            <li>supply chain management, circular and closed-loop supply chains, and supply chain resilience under geopolitical and policy disruption</li>
+            <li>blockchain, artificial intelligence, and digital technologies in supply chains, with simulation, optimization, and multi-criteria decision making</li>
+          </ul>
+          <p class="edu"><b>Education:</b>Ph.D. in Industrial Engineering (Eskisehir Osmangazi University, Turkey)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LINKS AND CONTACT DETAILS ===== -->
+    <section class="contact">
+      <div class="wrap">
+        <ul class="links">
+          <li><a href="https://www.uah.edu/business/faculty-staff/abdullah-yildizbasi">UAH faculty page</a></li>
+          <li><a href="https://scholar.google.com/citations?user=8K1nIqYAAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/abdullah-yildizbasi-9b062952/">LinkedIn</a></li>
+        </ul>
+        <div class="reach">
+          <span>Email: <a href="mailto:abdullah.yildizbasi@uah.edu">abdullah.yildizbasi@uah.edu</a></span>
+          <span>Phone: (256) 824-6683</span>
+          <span>Business Administration Building, Room 371</span>
+          <span>301 Sparkman Drive, Huntsville, AL 35899</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <!-- ===== ABOUT: edit the paragraphs below ===== -->
+        <h2 class="caps">About</h2>
+        <p class="prose">I am a Clinical Associate Professor of Management Science in the Department of Information Systems, Supply Chain, and Analytics at the University of Alabama in Huntsville. Before joining UAH in 2025, I taught at Worcester Polytechnic Institute's Business School, where I was also a postdoctoral fellow, and I was an Assistant Professor of Industrial Engineering at Ankara Yildirim Beyazit University in Turkey. I hold a Ph.D. in Industrial Engineering from Eskisehir Osmangazi University and an M.S. in Engineering Management from Syracuse University.</p>
+        <p class="prose">My research is about supply chains and how to make them circular, safe, and resilient. I study circular and closed-loop supply chains, particularly for lithium-ion batteries and renewable energy, and how blockchain, artificial intelligence, and other digital technologies change the way supply chains are run. I work with simulation, optimization, and multi-criteria decision making, and more recently I have been examining how supply chains hold up under geopolitical and policy disruption.</p>
+        <p class="prose">My work has appeared in the <em>International Journal of Production Research</em>, the <em>Journal of Cleaner Production</em>, <em>Resources, Conservation and Recycling</em>, <em>Business Strategy and the Environment</em>, and <em>Renewable Energy</em>, among others. Since 2022 I have been listed among the World's Top 2% Scientists (Stanford University / Elsevier).</p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <!-- ===== PUBLICATIONS =====
+             To add a paper, copy one block from <article class="pub"> to </article>,
+             paste it under the right year, and change the title, co-authors, journal and link.
+             To start a new year, copy a whole block from <div class="year-group"> to its closing </div>. -->
+        <h2 class="caps">Publications</h2>
+        <div class="year-group"><h3 class="year">In press</h3>
+<article class="pub">
+<h4>Blockchain integration into the automotive industry: Use cases, architectures, and future directions</h4>
+<p class="venue">In The Palgrave Handbook of Blockchain Technology for Business, Springer (forthcoming)</p>
+</article>
+<article class="pub">
+<h4>Mathematical modeling of corporate social responsibility in sustainable supply chain management: A multi-objective MILP approach</h4>
+<p class="with">with C. Ozturk</p>
+<p class="venue">In Corporate Social Responsibility in Smart and Sustainable Operations: Theoretical Foundations and Managerial Applications in SCM, Taylor and Francis (forthcoming)</p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2027</h3>
+<article class="pub">
+<h4>Where will AI land? A skill-based taxonomy of occupations, the concentration of AI exposure, and early employment evidence</h4>
+<p class="with">with V. Pavlopoulos, T. Singh and H. Pham</p>
+<p class="venue">Proceedings of the 60th Hawaii International Conference on System Sciences (2027)</p>
+</article>
+<article class="pub">
+<h4>Agentic fragility and the risks of autonomous workflows</h4>
+<p class="with">with H. Pham, V. Pavlopoulos and W. Mok</p>
+<p class="venue">Proceedings of the 60th Hawaii International Conference on System Sciences (2027)</p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2026</h3>
+<article class="pub">
+<h4>Stakeholder roles in blockchain-based safety management for closed-loop supply chains</h4>
+<p class="with">with Z. Chen and J. Sarkis</p>
+<p class="venue"><a href="https://doi.org/10.1080/09537287.2026.2695697">Production Planning &amp; Control (2026)</a></p>
+</article>
+<article class="pub">
+<h4>Unlocking digital product passport integration: Multidimensional hurdles in supply chains</h4>
+<p class="with">with C. Ozturk</p>
+<p class="venue"><a href="https://doi.org/10.3390/systems14060696">Systems (2026)</a></p>
+</article>
+<article class="pub">
+<h4>Generative artificial intelligence for adopting circular economy in supply chains: Opportunities, challenges, and future pathways</h4>
+<p class="with">with S. E. Celik, Z. Chen and J. Sarkis</p>
+<p class="venue"><a href="https://doi.org/10.1504/ijgaib.2026.151818">International Journal of Generative Artificial Intelligence in Business (2026)</a></p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2025</h3>
+<article class="pub">
+<h4>Exploring the synergy between circular economy and emerging technologies for transportation infrastructure: A systematic literature review</h4>
+<p class="with">with S. E. Celik, Y. Arioz, Z. Chen, L. Sun and C. Ozturk</p>
+<p class="venue"><a href="https://doi.org/10.1016/j.jclepro.2024.144553">Journal of Cleaner Production (2025)</a></p>
+</article>
+<article class="pub">
+<h4>Integrating generative AI into circular supply chain safety management: A forward-looking perspective</h4>
+<p class="with">with Z. Chen and J. Sarkis</p>
+<p class="venue"><a href="https://doi.org/10.1109/emr.2025.3541542">IEEE Engineering Management Review (2025)</a></p>
+</article>
+<article class="pub">
+<h4>Unlocking circularity: A stakeholder theory approach to the 10Rs in the solar PV supply chain</h4>
+<p class="with">with Y. Arioz and I. Yilmaz</p>
+<p class="venue">Renewable Energy (2025)</p>
+</article>
+<article class="pub">
+<h4>Digital transformation for safer circular lithium-ion battery supply chains: A blockchain ecosystem-data perspective</h4>
+<p class="with">with Z. Chen and J. Sarkis</p>
+<p class="venue"><a href="https://doi.org/10.1080/00207543.2024.2381224">International Journal of Production Research (2025)</a></p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2024</h3>
+<article class="pub">
+<h4>Systematic literature review based on the descriptive, bibliometric, and content analysis of renewable energy supply chain for a circular economy</h4>
+<p class="with">with Y. Arioz, E. Ozceylan and I. Yilmaz</p>
+<p class="venue">Journal of Renewable and Sustainable Energy (2024)</p>
+</article>
+<article class="pub">
+<h4>Blockchain technology for automobile manufacturing</h4>
+<p class="with">with J. Sarkis</p>
+<p class="venue"><a href="https://doi.org/10.1201/9781003450306-4">In Blockchain Technology in the Automotive Industry, CRC Press (2024)</a></p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2023</h3>
+<article class="pub">
+<h4>Safety in lithium-ion battery circularity activities: A framework and evaluation methodology</h4>
+<p class="with">with Z. Chen, Y. Wang and J. Sarkis</p>
+<p class="venue"><a href="https://doi.org/10.1016/j.resconrec.2023.106962">Resources, Conservation and Recycling (2023)</a></p>
+</article>
+<article class="pub">
+<h4>How safe is the circular economy?</h4>
+<p class="with">with Z. Chen and J. Sarkis</p>
+<p class="venue"><a href="https://doi.org/10.1016/j.resconrec.2022.106649">Resources, Conservation and Recycling (2023)</a></p>
+</article>
+<article class="pub">
+<h4>The lithium-ion battery supply chain</h4>
+<p class="with">with C. Ozturk and Z. Chen</p>
+<p class="venue"><a href="https://doi.org/10.1007/978-3-030-89822-9_114-1">In The Palgrave Handbook of Supply Chain Management, Springer (2023)</a></p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2022</h3>
+<article class="pub">
+<h4>Safety concerns for the management of end-of-life lithium-ion batteries</h4>
+<p class="with">with Z. Chen, Y. Wang and J. Sarkis</p>
+<p class="venue"><a href="https://doi.org/10.1002/gch2.202200049">Global Challenges (2022)</a></p>
+</article>
+<article class="pub">
+<h4>A conceptual framework for blockchain-based sustainable supply chain and evaluating implementation barriers: A case of the tea supply chain</h4>
+<p class="with">with S. K. Mangla, Y. Kazancoglu, C. Ozturk and A. Calik</p>
+<p class="venue">Business Strategy and the Environment (2022)</p>
+</article>
+<article class="pub">
+<h4>Green supplier selection in new era for sustainability: A novel method for integrating big data analytics and a hybrid fuzzy multi-criteria decision making</h4>
+<p class="with">with Y. Arioz</p>
+<p class="venue"><a href="https://doi.org/10.1007/s00500-021-06477-8">Soft Computing (2022)</a></p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2021</h3>
+<article class="pub">
+<h4>Blockchain and renewable energy: Integration challenges in circular economy era</h4>
+<p class="venue"><a href="https://doi.org/10.1016/j.renene.2021.05.053">Renewable Energy (2021)</a></p>
+</article>
+<article class="pub">
+<h4>A novel hybrid network optimization model for printed circuit boards recycling: A circular economy perspective</h4>
+<p class="with">with Y. Arioz</p>
+<p class="venue"><a href="https://doi.org/10.1007/s10098-021-02217-6">Clean Technologies and Environmental Policy (2021)</a></p>
+</article>
+<article class="pub">
+<h4>Assessing the social sustainable supply chain indicators using an integrated fuzzy multi-criteria decision-making method: A case study of Turkey</h4>
+<p class="with">with C. Ozturk, D. Efendioglu and S. Bulkan</p>
+<p class="venue">Environment, Development and Sustainability (2021)</p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2020</h3>
+<article class="pub">
+<h4>Optimal estimation of the proton exchange membrane fuel cell model parameters based on extended version of crow search algorithm</h4>
+<p class="with">with X. Lu, D. Kanghong, L. Guo and P. Wang</p>
+<p class="venue"><a href="https://doi.org/10.1016/j.jclepro.2020.122640">Journal of Cleaner Production (2020)</a></p>
+</article>
+<article class="pub">
+<h4>Developed coyote optimization algorithm and its application to optimal parameters estimation of PEMFC model</h4>
+<p class="with">with Z. Yuan, W. Wang and H. Wang</p>
+<p class="venue"><a href="https://doi.org/10.1016/j.egyr.2020.04.032">Energy Reports (2020)</a></p>
+</article>
+<article class="pub">
+<h4>Barriers to implementation of blockchain into supply chain management using an integrated multi-criteria decision-making method: A numerical example</h4>
+<p class="with">with C. Ozturk</p>
+<p class="venue"><a href="https://doi.org/10.1007/s00500-020-04831-w">Soft Computing (2020)</a></p>
+</article>
+<article class="pub">
+<h4>Allocation and sizing of battery energy storage system for primary frequency control based on bio-inspired methods: A case study</h4>
+<p class="with">with Z. Yuan, W. Wang and H. Wang</p>
+<p class="venue">International Journal of Hydrogen Energy (2020)</p>
+</article>
+<article class="pub">
+<h4>Evaluation of retail industry performance ability through integrated intuitionistic fuzzy TOPSIS and data envelopment analysis approach</h4>
+<p class="with">with B. D. Rouyendegh and I. Yilmaz</p>
+<p class="venue"><a href="https://doi.org/10.1007/s00500-020-04669-2">Soft Computing (2020)</a></p>
+</article>
+<article class="pub">
+<h4>A new methodology for optimal location and sizing of battery energy storage system in distribution networks for loss reduction</h4>
+<p class="with">with Z. Yuan, W. Wang and H. Wang</p>
+<p class="venue"><a href="https://doi.org/10.1016/j.est.2020.101368">Journal of Energy Storage (2020)</a></p>
+</article>
+<article class="pub">
+<h4>Intuitionistic fuzzy TOPSIS method for green supplier selection problem</h4>
+<p class="with">with B. D. Rouyendegh and P. Ustunyer</p>
+<p class="venue"><a href="https://doi.org/10.1007/s00500-019-04054-8">Soft Computing (2020)</a></p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2019</h3>
+<article class="pub">
+<h4>Risk management in lean and green supply chain: A novel fuzzy linguistic risk assessment approach</h4>
+<p class="with">with T. Paksoy, A. Calik and S. Huber</p>
+<p class="venue">In Lean and Green Supply Chain Management, Springer (2019)</p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2018</h3>
+<article class="pub">
+<h4>Multi-level optimization of an automotive closed-loop supply chain network with interactive fuzzy programming approaches</h4>
+<p class="with">with A. Calik, T. Paksoy, R. Z. Farahani and G. W. Weber</p>
+<p class="venue">Technological and Economic Development of Economy (2018)</p>
+</article>
+<article class="pub">
+<h4>Multi-criteria decision-making approach for evaluation of the performance of computer programming languages in higher education</h4>
+<p class="with">with B. D. Rouyendegh</p>
+<p class="venue">Computer Applications in Engineering Education (2018)</p>
+</article>
+</div>
+<div class="year-group"><h3 class="year">2017</h3>
+<article class="pub">
+<h4>A decentralized model for allied closed-loop supply chains: Comparative analysis of interactive fuzzy programming approaches</h4>
+<p class="with">with A. Calik, T. Paksoy and N. Y. Pehlivan</p>
+<p class="venue">International Journal of Fuzzy Systems (2017)</p>
+</article>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== TALKS PAGE: each talk is one <article class="pub"> block ===== -->
+  <div id="view-talks" data-view-panel="talks" hidden>
+    <section class="page-head"><div class="wrap"><h2 class="caps">Talks</h2></div></section>
+    <div class="wrap"><div class="year-group"><h3 class="year">2026</h3>
+<article class="pub"><h4>The reshoring decision under geopolitical uncertainty: A real options approach for defense suppliers</h4>
+<p class="with">Decision Sciences Institute Annual Conference, San Francisco, CA</p></article>
+<article class="pub"><h4>Can commodity markets warn us first? A time series investigation of critical mineral price signals as a leading indicator</h4>
+<p class="with">Decision Sciences Institute Annual Conference, San Francisco, CA</p></article>
+<article class="pub"><h4>A circular economy framework for aerospace MRO: Barriers, enablers, and a research agenda</h4>
+<p class="with">Decision Sciences Institute Annual Conference, San Francisco, CA</p></article>
+<article class="pub"><h4>Supply chain transparency in the space economy: Can blockchain support orbital sustainability governance?</h4>
+<p class="with">Decision Sciences Institute Annual Conference, San Francisco, CA</p></article>
+<article class="pub"><h4>National security uncertainty and investment spike behavior in the semiconductor industry through a real options lens</h4>
+<p class="with">INFORMS Annual Meeting, San Francisco, CA</p></article>
+<article class="pub"><h4>Cross-sector shock propagation at maritime chokepoints: Simulating the ripple effects of the Strait of Hormuz</h4>
+<p class="with">INFORMS Annual Meeting, San Francisco, CA</p></article>
+</div>
+<div class="year-group"><h3 class="year">2025</h3>
+<article class="pub"><h4>The role of blockchain technology in enhancing circularity and reducing emissions in LIB supply chains</h4>
+<p class="with">Decision Sciences Institute Annual Conference</p></article>
+</div>
+<div class="year-group"><h3 class="year">2024</h3>
+<article class="pub"><h4>Identifying stakeholder roles in blockchain applications for safety in circular supply chains</h4>
+<p class="with">55th Decision Sciences Institute Annual Conference</p></article>
+<article class="pub"><h4>Poverty alleviation through solar energy systems: Bridging gaps for a sustainable future</h4>
+<p class="with">INFORMS Annual Meeting</p></article>
+<article class="pub"><h4>Circular economy in solar PV: Analyzing the 10Rs through stakeholder theory</h4>
+<p class="with">INFORMS Annual Meeting</p></article>
+<article class="pub"><h4>Enhancing safety in circular supply chains: The strategic role of product deletion</h4>
+<p class="with">34th Annual POMS Conference</p></article>
+<article class="pub"><h4>Can circular economy mitigate natural resource dependence? The case of cobalt for LIBs</h4>
+<p class="with">34th Annual POMS Conference</p></article>
+<article class="pub"><h4>Assessing consumer preferences for blockchain supported safety in closed-loop supply chains</h4>
+<p class="with">34th Annual POMS Conference</p></article>
+</div>
+<div class="year-group"><h3 class="year">2023</h3>
+<article class="pub"><h4>Additive manufacturing as a catalyst for supply chain resilience: An empirical analysis</h4>
+<p class="with">54th Decision Sciences Institute Annual Conference</p></article>
+<article class="pub"><h4>Product portfolio rationalization for supply chain circularity and risk mitigation</h4>
+<p class="with">54th Decision Sciences Institute Annual Conference</p></article>
+<article class="pub"><h4>Exploring circular economy practices for mitigating natural resource dependence in the electric vehicle battery industry</h4>
+<p class="with">54th Decision Sciences Institute Annual Conference</p></article>
+<article class="pub"><h4>A blockchain ecosystem for safer circular lithium-ion battery supply chains: A performance-based theoretical perspective</h4>
+<p class="with">54th Decision Sciences Institute Annual Conference</p></article>
+<article class="pub"><h4>Circular supply chain stakeholder mapping for blockchain governance of lithium-ion battery safety</h4>
+<p class="with">Academy of Management Proceedings</p></article>
+<article class="pub"><h4>Blockchain-based lithium-ion battery closed-loop supply chain safety passport</h4>
+<p class="with">Northeast Decision Sciences Institute Annual Conference</p></article>
+<article class="pub"><h4>Safety in lithium-ion battery circular activities: Safe return to a sustainable world</h4>
+<p class="with">33rd Annual POMS Conference</p></article>
+<article class="pub"><h4>Stakeholder engagement in blockchain development: The case of governing lithium-ion battery circular supply chain safety</h4>
+<p class="with">33rd Annual POMS Conference</p></article>
+</div>
+<div class="year-group"><h3 class="year">2022</h3>
+<article class="pub"><h4>Measuring the efficiency of Turkish energy distribution companies using data envelopment analysis</h4>
+<p class="with">International Conference on Science, Engineering Management and Information Technology (Springer)</p></article>
+</div>
+<div class="year-group"><h3 class="year">2021</h3>
+<article class="pub"><h4>Key challenges of lithium-ion battery recycling process in circular economy environment: Pythagorean fuzzy AHP approach</h4>
+<p class="with">International Conference on Intelligent and Fuzzy Systems (Springer)</p></article>
+<article class="pub"><h4>Vaccine selection using interval-valued intuitionistic fuzzy VIKOR: A case study of COVID-19 pandemic</h4>
+<p class="with">International Conference on Intelligent and Fuzzy Systems (Springer)</p></article>
+<article class="pub"><h4>Big data-driven in COVID-19 pandemic management system: Evaluation of barriers with spherical fuzzy AHP approach</h4>
+<p class="with">International Conference on Intelligent and Fuzzy Systems (Springer)</p></article>
+<article class="pub"><h4>Hospital type location allocation decisions by using Pythagorean fuzzy sets composition: A case study of COVID-19</h4>
+<p class="with">International Conference on Intelligent and Fuzzy Systems (Springer)</p></article>
+</div>
+<div class="year-group"><h3 class="year">2018</h3>
+<article class="pub"><h4>A TOPSIS with intuitionistic fuzzy sets and DEA approach to evaluate retail industry performance ability</h4>
+<p class="with">DEA40: International Conference of Data Envelopment Analysis, Aston Business School, UK</p></article>
+</div>
+<div class="year-group"><h3 class="year">2017</h3>
+<article class="pub"><h4>Comparison of city sustainability performances with a hybrid fuzzy multi-criteria decision-making method: A case study of Turkey</h4>
+<p class="with">International Conference on Operations Research</p></article>
+<article class="pub"><h4>An integrated approach for assessment of green suppliers with interval type-2 fuzzy sets</h4>
+<p class="with">International Conference on Operations Research</p></article>
+<article class="pub"><h4>A mixed-integer programming model for green location and transportation in a closed-loop supply chain</h4>
+<p class="with">International Conference on Operations Research</p></article>
+</div>
+<div class="year-group"><h3 class="year">2015</h3>
+<article class="pub"><h4>A multi-level linear programming approach for optimizing a closed-loop supply chain with MCDM methods</h4>
+<p class="with">23rd International Conference on Multiple Criteria Decision Making, Hamburg, Germany</p></article>
+<article class="pub"><h4>A fuzzy analytic hierarchy process based approach for a multi-objective multi-level closed-loop supply chain model</h4>
+<p class="with">23rd International Conference on Multiple Criteria Decision Making, Hamburg, Germany</p></article>
+</div>
+<div class="year-group"><h3 class="year">2014</h3>
+<article class="pub"><h4>Multi-criteria decision making for recycling planning in the automotive industry</h4>
+<p class="with">20th Conference of the International Federation of Operational Research Societies (IFORS), Barcelona, Spain</p></article>
+</div>
+<div class="year-group"><h3 class="year">2013</h3>
+<article class="pub"><h4>Fuzzy mathematical programming approaches to the integration of reverse supply chain optimization and disassembly line balancing problems</h4>
+<p class="with">26th European Conference on Operational Research, Rome, Italy</p></article>
+</div></div>
+  </div>
+
+  <!-- ===== TEACHING PAGE: each course is one <li>...</li> line ===== -->
+  <div id="view-teaching" data-view-panel="teaching" hidden>
+    <section class="page-head"><div class="wrap"><h2 class="caps">Teaching</h2></div></section>
+    <div class="wrap"><section class="block"><h3 class="sub">University of Alabama in Huntsville</h3>
+<p class="when">2025 – present</p>
+<ul class="courses">
+<li><span class="course">MSC 605 – Operations Management (graduate)</span><span class="terms">Fall 2025, Spring 2026, Fall 2026</span></li>
+<li><span class="course">MSC 692 – Business Analytics Practicum (graduate)</span><span class="terms">Spring 2026</span></li>
+<li><span class="course">MSC 510 – Logistics Management (graduate)</span><span class="terms">Fall 2025, Fall 2026</span></li>
+<li><span class="course">MSC 385 – Operations Analysis (undergraduate)</span><span class="terms">Summer 2026, Fall 2026</span></li>
+<li><span class="course">MSC 411 – Supply Chain Management (undergraduate)</span><span class="terms">Spring 2026</span></li>
+<li><span class="course">MSC 410 – Transportation and Logistics Management (undergraduate)</span><span class="terms">Fall 2025, Fall 2026</span></li>
+</ul></section>
+<section class="block"><h3 class="sub">Worcester Polytechnic Institute</h3>
+<p class="when">2022 – 2025</p>
+<ul class="courses">
+<li><span class="course">OIE 544 – Supply Chain Analysis and Design (graduate)</span><span class="terms">Fall 2024</span></li>
+<li><span class="course">OIE 501 – Operations Management (graduate)</span><span class="terms">Summer 2024</span></li>
+<li><span class="course">OIE 2081 – Introduction to Prescriptive Analytics (undergraduate)</span><span class="terms">Spring 2024, Fall 2024, Spring 2025</span></li>
+<li><span class="course">OIE 3410 – Materials Management in Supply Chains (undergraduate)</span><span class="terms">Spring 2024, Spring 2025</span></li>
+</ul></section>
+<section class="block"><h3 class="sub">Ankara Yildirim Beyazit University and TOBB University of Economics and Technology, Turkey</h3>
+<p class="when">2016 – 2021</p>
+<ul class="sq">
+<li>Graduate: Operations Management; Supply Chain Management; Advanced Supply Chain Management</li>
+<li>Undergraduate: Logistics Management; Production Planning and Control; Production Information Systems; Engineering Economy; Method Analysis and Design; Human Relations Management</li>
+</ul></section></div>
+  </div>
+</main>
+
+<footer><div class="wrap">© 2026 Abdullah Yildizbasi</div></footer>
+
+<script>
+(function(){
+  var views=["research","talks","teaching"];
+  function show(v){
+    if(views.indexOf(v)<0) v="research";
+    document.body.setAttribute("data-view",v);
+    document.querySelectorAll("[data-view-panel]").forEach(function(p){p.hidden=(p.getAttribute("data-view-panel")!==v)});
+    document.querySelectorAll(".nav a").forEach(function(a){
+      if(a.getAttribute("data-go")===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll("[data-go]").forEach(function(a){
+    a.addEventListener("click",function(e){e.preventDefault();var v=a.getAttribute("data-go");try{history.replaceState(null,"","#"+v)}catch(_){}show(v)});
+  });
+  show((location.hash||"").replace("#",""));
+})();
+</script>
+</body>
+</html>
